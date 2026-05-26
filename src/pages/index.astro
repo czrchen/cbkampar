@@ -1,0 +1,212 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Wave from "../components/Wave.astro";
+
+const featured = [
+  { img: "/images/products/chicken-biscuits.jpg", name: "Kampar Chicken Biscuits", cat: "金寶雞仔餅" },
+  { img: "/images/products/curry-chicken-bread.jpg", name: "Curry Chicken Bread", cat: "咖哩麵包雞" },
+  { img: "/images/products/honey-saqima.jpg", name: "Honey Sa Qi Ma", cat: "蜜糖薩其瑪" },
+  { img: "/images/products/kaya-puff.jpg", name: "Kaya Puff", cat: "咖椰角" },
+];
+
+const quality = [
+  { k: "Kampar tradition", v: "Heritage recipes from the famous biscuit town of Kampar, Perak." },
+  { k: "Individually packed", v: "Sealed for freshness and hygiene — perfect for gifting." },
+  { k: "A confectioner's collection", v: "Chicken biscuits, kaya puffs, sa qi ma and fine delicacies." },
+];
+---
+
+<Layout path="/">
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy" data-hero-stagger>
+        <span class="eyebrow">A Confectioner's Collection · Kampar, Perak</span>
+        <h1>The taste of <span class="accent">Kampar</span> heritage.</h1>
+        <p class="hero-lead">
+          CB Kampar bakes the fine delicacies Kampar is famous for — savoury chicken biscuits,
+          curry chicken bread, kaya puffs and honey sa qi ma, made the traditional way and
+          individually packed.
+        </p>
+        <div class="hero-actions">
+          <a href="/products" class="btn btn-primary">Explore our collection
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="/about" class="btn btn-ghost">Our story</a>
+        </div>
+        <p class="hero-trust">Chicken Biscuits · Curry Chicken Bread · Kaya Puff · <strong>Honey Sa Qi Ma</strong>.</p>
+      </div>
+
+      <div class="hero-art" data-hero-art>
+        <div class="hero-img-main">
+          <img src="/images/products/honey-saqima.jpg" alt="CB Kampar Honey Sa Qi Ma" width="620" height="520" />
+        </div>
+        <div class="hero-badge">
+          <span class="mark">CB</span>
+          <span>A Confectioner's<br><strong>Collection</strong></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TICKER ============ -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Chicken Biscuits</span><i></i><span>Curry Chicken Bread</span><i></i><span>Dragon Ball Biscuits</span><i></i>
+      <span>Kaya Puff</span><i></i><span>Honey Sa Qi Ma</span><i></i><span>Fine Delicacies</span><i></i>
+      <span>Chicken Biscuits</span><i></i><span>Curry Chicken Bread</span><i></i><span>Dragon Ball Biscuits</span><i></i>
+      <span>Kaya Puff</span><i></i><span>Honey Sa Qi Ma</span><i></i><span>Fine Delicacies</span><i></i>
+    </div>
+  </div>
+
+  <!-- ============ FEATURED ============ -->
+  <section class="featured">
+    <div class="container">
+      <header class="sec-head row" data-reveal>
+        <div>
+          <span class="eyebrow">Our delicacies</span>
+          <h2 class="section-title">Baked the Kampar way</h2>
+        </div>
+        <a href="/products" class="btn btn-ghost">All products
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </header>
+
+      <div class="prod-grid" data-reveal-group>
+        {featured.map((p) => (
+          <a href="/products" class="prod-card">
+            <div class="prod-media"><img src={p.img} alt={p.name} loading="lazy" /></div>
+            <div class="prod-info">
+              <span class="prod-cat">{p.cat}</span>
+              <h3>{p.name}</h3>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY ============ -->
+  <section class="quality">
+    <div class="container quality-grid">
+      <div class="quality-media" data-reveal>
+        <div class="quality-frame">
+          <img src="/images/products/honey-vegetarian-saqima.jpg" alt="CB Kampar Honey Vegetarian Sa Qi Ma" width="560" height="600" loading="lazy" data-parallax="-26" />
+        </div>
+        <div class="quality-stat" data-parallax="22">
+          <span class="num">CB</span>
+          <span class="lbl">A confectioner's<br>collection</span>
+        </div>
+      </div>
+      <div class="quality-copy" data-reveal>
+        <span class="eyebrow">Why CB Kampar</span>
+        <h2 class="section-title">Fine delicacies, made with care</h2>
+        <p class="section-lead">Kampar's biscuit shops are a Malaysian institution. CB Kampar carries that tradition forward — the same recipes, the same care, packed fresh for every customer.</p>
+        <ul class="quality-list">
+          {quality.map((q) => (
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg>
+              <div><strong>{q.k}</strong><span>{q.v}</span></div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta ribbon">
+    <Wave side="top" />
+    <Wave side="bottom" />
+    <div class="container ribbon-inner">
+      <div class="cta-box" data-reveal>
+        <div class="cta-copy">
+          <h2>Bring home the taste of Kampar.</h2>
+          <p>Retail, wholesale and gifting — get in touch and we'll help you share our heritage biscuits.</p>
+        </div>
+        <a href="/contact" class="btn btn-primary">Get in touch
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .accent { color: var(--red); }
+
+  /* ---------- HERO ---------- */
+  .hero { padding: 72px 0 90px; }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
+  .hero-copy h1 { font-size: clamp(2.9rem, 6vw, 4.6rem); margin: 22px 0 22px; letter-spacing: -0.04em; }
+  .hero-lead { font-size: 1.15rem; color: var(--ink-soft); max-width: 510px; line-height: 1.65; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin: 32px 0 26px; }
+  .hero-trust { font-size: .95rem; color: var(--ink-soft); }
+  .hero-trust strong { color: var(--ink); font-weight: 700; }
+
+  .hero-art { position: relative; }
+  .hero-img-main { border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-md); aspect-ratio: 6 / 5; }
+  .hero-img-main img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-badge { position: absolute; bottom: -22px; left: -18px; display: flex; align-items: center; gap: 11px; background: #fff; color: var(--ink); padding: 12px 16px; border-radius: 14px; box-shadow: var(--shadow-md); }
+  .hero-badge .mark { display: grid; place-items: center; width: 40px; height: 40px; background: var(--red); color: #fff; border-radius: 10px; font-family: var(--font-display); font-weight: 800; }
+  .hero-badge span:not(.mark) { font-family: var(--font-display); font-size: .72rem; line-height: 1.15; letter-spacing: .04em; color: var(--ink-soft); }
+  .hero-badge strong { color: var(--red); font-size: .92rem; }
+
+  /* ---------- TICKER ---------- */
+  .ticker { background: var(--navy); overflow: hidden; padding: 15px 0; }
+  .ticker-track { display: flex; align-items: center; gap: 28px; white-space: nowrap; width: max-content; animation: scroll 32s linear infinite; }
+  .ticker-track span { font-family: var(--font-display); font-weight: 600; font-size: .92rem; text-transform: uppercase; letter-spacing: .14em; color: rgba(255,255,255,.92); }
+  .ticker-track i { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); display: inline-block; }
+  @keyframes scroll { to { transform: translateX(-50%); } }
+
+  /* ---------- shared section header ---------- */
+  .featured { padding: 100px 0 0; }
+  .sec-head { margin-bottom: 48px; }
+  .sec-head.row { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
+
+  /* ---------- FEATURED ---------- */
+  .prod-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+  .prod-card { display: block; }
+  .prod-media { aspect-ratio: 4/3; overflow: hidden; border-radius: 22px; background: var(--cream); display: grid; place-items: center; box-shadow: 0 0 0 rgba(42,26,20,0); transition: transform .4s cubic-bezier(.2,.8,.25,1), box-shadow .4s ease; }
+  .prod-media img { width: 100%; height: 100%; object-fit: contain; transition: transform .6s cubic-bezier(.2,.8,.25,1); }
+  .prod-card:hover .prod-media { transform: translateY(-10px); box-shadow: 0 24px 40px rgba(192,39,31,.16); }
+  .prod-card:hover .prod-media img { transform: scale(1.05); }
+  .prod-info { padding: 16px 4px 0; }
+  .prod-cat { font-size: .82rem; font-weight: 600; color: var(--gold); }
+  .prod-info h3 { font-size: 1.05rem; margin-top: 4px; letter-spacing: -0.02em; transition: color .25s ease; }
+  .prod-card:hover .prod-info h3 { color: var(--red); }
+
+  /* ---------- WHY ---------- */
+  .quality { padding: 110px 0 0; }
+  .quality-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; align-items: center; }
+  .quality-media { position: relative; }
+  .quality-frame { border-radius: var(--r-lg); overflow: hidden; aspect-ratio: 14/15; box-shadow: var(--shadow-md); }
+  .quality-frame img { width: 100%; height: 114%; object-fit: cover; object-position: center; }
+  .quality-stat { position: absolute; right: -22px; bottom: 32px; z-index: 2; background: var(--red); color: #fff; border-radius: 16px; padding: 18px 22px; box-shadow: 0 18px 40px rgba(192,39,31,.3); display: flex; align-items: center; gap: 12px; }
+  .quality-stat .num { font-family: var(--font-display); font-weight: 800; font-size: 2rem; line-height: 1; }
+  .quality-stat .lbl { font-size: .82rem; line-height: 1.25; opacity: .95; }
+  .quality-copy .section-title { font-size: clamp(1.8rem, 3.6vw, 2.7rem); }
+  .quality-list { margin-top: 28px; display: grid; gap: 16px; }
+  .quality-list li { display: flex; gap: 14px; align-items: flex-start; }
+  .quality-list svg { width: 22px; height: 22px; color: var(--red); flex-shrink: 0; margin-top: 2px; }
+  .quality-list strong { display: block; font-family: var(--font-display); font-size: 1.02rem; margin-bottom: 2px; }
+  .quality-list span { color: var(--ink-soft); font-size: .96rem; }
+
+  /* ---------- CTA ---------- */
+  .cta-box { display: flex; justify-content: space-between; align-items: center; gap: 36px; flex-wrap: wrap; }
+  .cta-box h2 { color: #fff; font-size: clamp(1.8rem, 3.6vw, 2.7rem); margin-bottom: 12px; }
+  .cta-box p { color: rgba(255,255,255,.82); max-width: 460px; }
+  .cta-box .btn { flex-shrink: 0; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 960px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 70px; }
+    .hero-art { max-width: 520px; }
+    .quality-grid { grid-template-columns: 1fr; gap: 40px; }
+    .quality-media { max-width: 460px; }
+    .prod-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 560px) {
+    .prod-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+  }
+</style>

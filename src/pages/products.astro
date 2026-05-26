@@ -1,0 +1,86 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Wave from "../components/Wave.astro";
+
+const products = [
+  { img: "/images/products/chicken-biscuits.jpg", name: "Kampar Chicken Biscuits", cn: "金寶雞仔餅", desc: "The Kampar classic — savoury, flaky biscuits with a fragrant, moreish filling." },
+  { img: "/images/products/curry-chicken-bread.jpg", name: "Kampar Curry Chicken Bread", cn: "金寶咖哩麵包雞", desc: "Spiced curry chicken baked into a soft, golden bun — a Kampar favourite." },
+  { img: "/images/products/dragon-ball-biscuits.jpg", name: "Dragon Ball Biscuits", cn: "龍珠餅", desc: "Crisp, bite-sized traditional biscuits, perfect with tea." },
+  { img: "/images/products/kaya-puff.jpg", name: "Kaya Puff", cn: "咖椰角", desc: "Flaky layered pastry filled with rich coconut-egg kaya." },
+  { img: "/images/products/honey-saqima.jpg", name: "Honey Sa Qi Ma", cn: "蜜糖薩其瑪", desc: "Honey-glazed crispy cookies, individually packed for freshness." },
+  { img: "/images/products/honey-vegetarian-saqima.jpg", name: "Honey Vegetarian Sa Qi Ma", cn: "蜜糖素薩其瑪", desc: "A vegetarian take on the honey sa qi ma classic." },
+];
+---
+
+<Layout path="/products" title="Products — CB Kampar Confectioner's Collection">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow" data-reveal>Our products</span>
+      <h1 class="page-title" data-reveal>A confectioner's collection</h1>
+      <p class="page-lead" data-reveal>
+        From the famous Kampar chicken biscuits to honey sa qi ma and kaya puffs — fine delicacies
+        baked the traditional way, individually packed and ready to share.
+      </p>
+    </div>
+  </section>
+
+  <section class="prod-sec">
+    <div class="container">
+      <div class="prod-grid" data-reveal-group>
+        {products.map((p) => (
+          <article class="pcard">
+            <div class="pcard-media"><img src={p.img} alt={p.name} loading="lazy" /></div>
+            <div class="pcard-body">
+              <h3>{p.name} <span class="cn">{p.cn}</span></h3>
+              <p>{p.desc}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="oem ribbon">
+    <Wave side="top" />
+    <Wave side="bottom" />
+    <div class="container ribbon-inner">
+      <div class="oem-box" data-reveal>
+        <div class="oem-copy">
+          <h2>Stock CB Kampar</h2>
+          <p>Wholesale, retail and gifting enquiries welcome — bring the taste of Kampar's heritage biscuits to your shelves and customers.</p>
+        </div>
+        <a href="/contact" class="btn btn-primary">Enquire now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero { padding: 64px 0 36px; }
+  .page-title { font-size: clamp(2.4rem, 5.4vw, 3.8rem); margin: 18px 0 18px; letter-spacing: -0.04em; }
+  .page-lead { font-size: 1.12rem; color: var(--ink-soft); max-width: 640px; line-height: 1.65; }
+
+  .prod-sec { padding: 10px 0 0; }
+  .prod-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+  .pcard { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; transition: transform .35s ease, box-shadow .35s ease; }
+  .pcard:hover { transform: translateY(-8px); box-shadow: var(--shadow-md); }
+  .pcard-media { aspect-ratio: 4/3; background: var(--cream); display: grid; place-items: center; overflow: hidden; }
+  .pcard-media img { width: 100%; height: 100%; object-fit: contain; }
+  .pcard-body { padding: 22px 24px 26px; }
+  .pcard-body h3 { font-size: 1.18rem; letter-spacing: -0.02em; margin-bottom: 8px; }
+  .pcard-body .cn { font-weight: 500; color: var(--gold); font-size: .98rem; }
+  .pcard-body p { color: var(--ink-soft); font-size: .95rem; line-height: 1.55; }
+
+  .oem-box { display: flex; justify-content: space-between; align-items: center; gap: 36px; flex-wrap: wrap; }
+  .oem-box h2 { color: #fff; font-size: clamp(1.8rem, 3.6vw, 2.5rem); margin-bottom: 12px; }
+  .oem-box p { color: rgba(255,255,255,.85); max-width: 520px; }
+  .oem-box .btn { flex-shrink: 0; }
+
+  @media (max-width: 900px) { .prod-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) {
+    .prod-grid { grid-template-columns: 1fr; }
+    .oem-box { padding: 40px 30px; }
+  }
+</style>
