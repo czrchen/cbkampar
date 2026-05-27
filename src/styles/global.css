@@ -4,12 +4,12 @@
    =========================================================== */
 
 :root {
-  /* Brand */
-  --navy:       #5A1410;   /* deep maroon (dark sections) */
-  --navy-2:     #7A1F18;
-  --red:        #C0271F;   /* CB heritage red */
-  --red-deep:   #9E1E18;
-  --gold:       #DDA03A;   /* warm amber/gold accent */
+  /* Brand — Lee Kum Kee red + gold */
+  --navy:       #5A1014;   /* deep maroon (dark sections) */
+  --navy-2:     #7A171C;
+  --red:        #C8102E;   /* LKK red */
+  --red-deep:   #A50D26;
+  --gold:       #D9A53C;   /* warm gold accent */
 
   /* Surface + text */
   --ink:        #2A1A14;   /* warm near-black text */
