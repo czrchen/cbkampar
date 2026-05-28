@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Wave from "../components/Wave.astro";
 
 const products = [
   { img: "/images/products/chicken-biscuits.jpg", name: "Kampar Chicken Biscuits", cn: "金寶雞仔餅", desc: "The Kampar classic — savoury, flaky biscuits with a fragrant, moreish filling." },
@@ -16,7 +15,7 @@ const products = [
   <section class="page-hero">
     <div class="container">
       <span class="eyebrow" data-reveal>Our products</span>
-      <h1 class="page-title" data-reveal>A confectioner's collection</h1>
+      <h1 class="page-title" data-split>A confectioner's collection</h1>
       <p class="page-lead" data-reveal>
         From the famous Kampar chicken biscuits to honey sa qi ma and kaya puffs — fine delicacies
         baked the traditional way, individually packed and ready to share.
@@ -36,22 +35,6 @@ const products = [
             </div>
           </article>
         ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="oem ribbon">
-    <Wave side="top" />
-    <Wave side="bottom" />
-    <div class="container ribbon-inner">
-      <div class="oem-box" data-reveal>
-        <div class="oem-copy">
-          <h2>Stock CB Kampar</h2>
-          <p>Wholesale, retail and gifting enquiries welcome — bring the taste of Kampar's heritage biscuits to your shelves and customers.</p>
-        </div>
-        <a href="/contact" class="btn btn-primary">Enquire now
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
       </div>
     </div>
   </section>

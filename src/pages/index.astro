@@ -22,7 +22,7 @@ const quality = [
     <div class="container hero-grid">
       <div class="hero-copy" data-hero-stagger>
         <span class="eyebrow">A Confectioner's Collection · Kampar, Perak</span>
-        <h1>The taste of <span class="accent">Kampar</span> heritage.</h1>
+        <h1 data-split>The taste of Kampar heritage.</h1>
         <p class="hero-lead">
           CB Kampar bakes the fine delicacies Kampar is famous for — savoury chicken biscuits,
           curry chicken bread, kaya puffs and honey sa qi ma, made the traditional way and
@@ -102,7 +102,7 @@ const quality = [
         <span class="eyebrow">Why CB Kampar</span>
         <h2 class="section-title">Fine delicacies, made with care</h2>
         <p class="section-lead">Kampar's biscuit shops are a Malaysian institution. CB Kampar carries that tradition forward — the same recipes, the same care, packed fresh for every customer.</p>
-        <ul class="quality-list">
+        <ul class="quality-list" data-scrub>
           {quality.map((q) => (
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg>
@@ -110,23 +110,6 @@ const quality = [
             </li>
           ))}
         </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CTA ============ -->
-  <section class="cta ribbon">
-    <Wave side="top" />
-    <Wave side="bottom" />
-    <div class="container ribbon-inner">
-      <div class="cta-box" data-reveal>
-        <div class="cta-copy">
-          <h2>Bring home the taste of Kampar.</h2>
-          <p>Retail, wholesale and gifting — get in touch and we'll help you share our heritage biscuits.</p>
-        </div>
-        <a href="/contact" class="btn btn-primary">Get in touch
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
       </div>
     </div>
   </section>
